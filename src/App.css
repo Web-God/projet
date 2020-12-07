@@ -1,0 +1,37 @@
+html {
+  font-size: 16px;
+  font-family: 'granjon'; }
+
+body {
+  height: 100%; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . ."; }
+  .container__leftside {
+    background-color: #226A8A;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .container__center {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue; }
+  .container__rightside {
+    background-color: #8A1C2C;
+    display: flex;
+    justify-content: center; }
+
+.container__leftside-logo {
+  width: 220px; }
+
+.container__leftside-clock {
+  padding: 10px;
+  color: #000000;
+  margin: auto;
+  font-size: 5rem; }
+
+/*# sourceMappingURL=App.css.map */

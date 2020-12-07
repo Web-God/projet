@@ -1,0 +1,243 @@
+/* FONT FACES */
+/* Roboto */
+@font-face {
+  font-family: 'Garamond Bold';
+  src: url("../assets/fonts/garamond/EBGaramond-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto BlackItalic';
+  src: url("../assets/fonts/garamond/EBGaramond-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url("../assets/fonts/garamond/EBGaramond-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto BoldItalic';
+  src: url("../fonts/roboto/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Italic';
+  src: url("../fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto LightItalic';
+  src: url("../fonts/roboto/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto MediumItalic';
+  src: url("../fonts/roboto/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto ThinItalic';
+  src: url("../fonts/roboto/Roboto-ThinItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Slab */
+@font-face {
+  font-family: 'Roboto-Slab Bold';
+  src: url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.woff') format('woff'),
+    url("../fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab';
+  src: url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.woff') format('woff'),
+    url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab Light';
+  src: url('../fonts/roboto-slab/RobotoSlab-Light-webfont.woff') format('woff'),
+    url("../fonts/roboto-slab/RobotoSlab-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Slab Thin';
+  src: url('../fonts/roboto-slab/RobotoSlab-Thin-webfont.woff') format('woff'),
+    url("../fonts/roboto-slab/RobotoSlab-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Playfair Display */
+@font-face {
+  font-family: 'PlayfairDisplay-Black';
+  src: url("../fonts/playfair-display/PlayfairDisplay-Black.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-BlackItalic';
+  src: url("../fonts/playfair-display/PlayfairDisplay-BlackItalic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-BlackItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Bold';
+  src: url("../fonts/playfair-display/PlayfairDisplay-Bold.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-BoldItalic';
+  src: url("../fonts/playfair-display/PlayfairDisplay-BoldItalic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Italic';
+  src: url("../fonts/playfair-display/PlayfairDisplay-Italic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Regular';
+  src: url("../fonts/playfair-display/PlayfairDisplay-Regular.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-Black';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-Black.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-BlackItalic';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-BlackItalic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-BlackItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-Bold';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-Bold.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-BoldItalic';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-BoldItalic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-Italic';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-Italic.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplaySC-Regular';
+  src: url("../fonts/playfair-display/PlayfairDisplaySC-Regular.otf") format("opentype"),
+    url("../fonts/playfair-display/PlayfairDisplaySC-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

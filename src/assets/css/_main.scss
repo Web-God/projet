@@ -1,0 +1,37 @@
+html {
+  font-size: 16px;
+  font-family: 'granjon';
+}
+body {
+  height: 100%;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . .";
+    &__leftside{
+      background-color: $colorBlue;
+      @include flexCenterY;
+    }
+    &__center{
+      @include flexCenterX;
+      background-color: aliceblue;
+    }
+  &__rightside {
+    background-color:$colorRed;
+    @include flexCenterX;
+  }
+}
+
+.container__leftside-logo{
+  width: 220px;
+}
+.container__leftside-clock {
+  padding: 10px;
+  color: $black;
+  @include center;
+  font-size: 5rem;
+}
