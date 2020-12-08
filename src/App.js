@@ -1,12 +1,13 @@
 import './App.css';
 
 import Leftside from './components/Leftside';
+import Rightside from './components/Rightside';
 function App() {
   return (
     <div className="container">
       <Leftside />
       <div className="container__center">Center</div>
-      <div className="container__rightside">Right</div>
+      <Rightside />
     </div>
   );
 }

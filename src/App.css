@@ -1,5 +1,46 @@
 html {
   font-size: 16px;
+  font-family: 'granjon';
+  height: 100%; }
+
+body {
+  height: 100%; }
+
+h1 {
+  font-family: 'Garamond Bold'; }
+
+.container {
+  min-height: 940px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . ."; }
+  .container__leftside {
+    background-color: #226A8A;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .container__center {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue; }
+  .container__rightside {
+    background-color: #8A1C2C;
+    display: flex;
+    justify-content: center; }
+
+.container__leftside-logo {
+  width: 220px; }
+
+.container__leftside-clock {
+  padding: 10px;
+  color: #000000;
+  margin: auto;
+  text-align: center; }
+
+html {
+  font-size: 16px;
   font-family: 'granjon'; }
 
 body {
@@ -29,9 +70,133 @@ body {
   width: 220px; }
 
 .container__leftside-clock {
+  width: 200px;
   padding: 10px;
-  color: #000000;
+  font-size: 3rem;
+  color: #226A8A;
   margin: auto;
-  font-size: 5rem; }
+  text-align: center;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px; }
+
+.btn, .content-btn .start, .content-btn .start-submit, .content-btn .lucky-submit, .content-btn .tips, .content-btn .tips-submit {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  color: #8A1C2C;
+  padding: 5px 7px;
+  background-color: #FFFFFF;
+  cursor: pointer; }
+
+.input, .content-btn .lucky, .container__rightside-score {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  color: #8A1C2C;
+  padding: 5px 7px;
+  background-color: #FFFFFF;
+  border: none; }
+
+.content-btn {
+  width: 220px;
+  display: flex;
+  margin-bottom: 1em; }
+  .content-btn .start {
+    width: 150px;
+    margin-right: 1em;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px; }
+    .content-btn .start:hover {
+      color: #226A8A; }
+  .content-btn .start-submit {
+    width: 45px;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0; }
+    .content-btn .start-submit:hover {
+      color: #226A8A; }
+    .content-btn .start-submit img {
+      width: 100%; }
+
+/*Lucky */
+.content-btn {
+  width: 220px;
+  display: flex;
+  margin-bottom: 1em; }
+  .content-btn .lucky {
+    height: 45px;
+    width: 150px;
+    margin-right: 1em;
+    padding: 5px 7px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px; }
+  .content-btn .lucky-submit {
+    width: 45px;
+    height: 45px;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0; }
+  .content-btn img {
+    width: 100%; }
+
+.lucky-label {
+  margin-bottom: -11px;
+  margin-left: -65px;
+  color: #FFFFFF; }
+
+.content-btn {
+  width: 220px;
+  display: flex;
+  margin-bottom: 1em; }
+  .content-btn .tips {
+    width: 150px;
+    margin-right: 1em;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px; }
+    .content-btn .tips:hover {
+      color: #226A8A; }
+  .content-btn .tips-submit {
+    width: 45px;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0; }
+    .content-btn .tips-submit:hover {
+      color: #226A8A; }
+    .content-btn .tips-submit img {
+      width: 100%; }
+
+/* RIGHT SIDE */
+.container__rightside-score {
+  height: 60px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px; }
 
 /*# sourceMappingURL=App.css.map */
