@@ -5,21 +5,22 @@
   box-sizing: border-box;
 }
 a {
-  color: $colorLink;
+  color: $colorRed;
 }
 
 a:visited {
-  color: $colorLinkHover;
+  color: $colorRed;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: $colorSecondary;
+  color: $colorBlue;
   text-decoration: none;
 }
 
-figure, input {
+figure,
+input {
   margin: 0;
   padding: 0;
 }

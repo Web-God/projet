@@ -1,0 +1,5 @@
+@each $i in $list {
+  .image-#{$i} {
+    background-image: url(‘../img/#{$i}.jpg);
+  }
+}

@@ -12,7 +12,7 @@ const Leftside = () =>{
             </div>
                 <div className="lucky-label">Je tente ma chance</div>
             <div className="content-btn">
-                <input className="lucky" id="lucky" type="text" id="lucky" name="lucky" minlength="4" maxlength="40" size="10" placeholder="Maradona" />
+                <input className="lucky" id="lucky" type="text" id="lucky" name="lucky" minLength="4" maxLength="40" size="10" placeholder="Maradona" />
                 <div className="lucky-submit" id="lucky-submit"><img src={arrowright} alt="" /></div>
             </div>
             <div className="content-btn">
