@@ -1,0 +1,15 @@
+
+[
+    {
+        "name": "Albert Lebrun",
+        "src" : "../assets/img/Albert-Lebrun.jpeg"
+    },
+    {
+        "name": "Adolphe Thiers",
+        "src" : "../assets/img/Adolphe-Thiers.jpeg"
+    },
+    {
+        "name": "Alain Poher",
+        "src" : "../assets/img/Alain-Poher.jpeg"
+    }
+]

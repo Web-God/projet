@@ -1,5 +1,6 @@
-@each $i in $list {
-  .image-#{$i} {
-    background-image: url(‘../img/#{$i}.jpg);
-  }
+.container__center {
 }
+    .center_img{
+      object-fit: cover;
+      min-width: 760px;
+    }

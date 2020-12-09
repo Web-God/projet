@@ -1,0 +1,17 @@
+/* RIGHT SIDE */
+.container__rightside {
+    &-score {
+      @extend .input;
+      text-align: center;
+      font-size: 2em;
+      width: 250px;
+      height: 60px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+  
+  }
+  
