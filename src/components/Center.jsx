@@ -1,16 +1,102 @@
-import jim from './President'
-let numPres = Math.floor(Math.random()*25);
+import jim from './President';
+import img1 from './../assets/img/cards/Medaille_de_la_Famille_Francaise_Bronze_ribbon.svg';
+import img2 from './../assets/img/cards/Medaille_de_la_Jeunesse_et_des_Sports_Or_ribbon.svg';
+import img3 from './../assets/img/cards/Medaille_dhonneur_de_laeronautique_Or_ribbon.svg';
+import img4 from './../assets/img/cards/Medaille_dhonneur_de_lenseignement_du_premier_degre_ribbon.svg';
+import img5 from './../assets/img/cards/Medaille_dhonneur_des_societes_musicales_et_chorales_Bronze_ribbon.svg';
+import img6 from './../assets/img/cards/Medaille_du_Tourisme_Bronze_ribbon.svg';
+import img7 from './../assets/img/cards/Ruban_de_la_Medaille_des_Mines.svg';
+import { useState } from 'react';
+let numPres = Math.floor(Math.random() * 25);
+// Array with tiles
+const tiles_array = ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14"];
+function rotateCard(){
+    this.classList.add('back');
+}
 
-const Center = ()=>{ 
-    return(
-        <div className="container__center center_img" style={{backgroundImage: "url("+ jim[numPres].src +")", backgroundRepeat  : 'no-repeat'}}>
-            <div className="title_president">
-                {jim[numPres].name}
-
-
+// Fisher - Yates react
+function Center() {
+    const [close, setClose] = useState(false);
+    const [back, setBack] = useState(false);
+    return (
+        <div className="container__center center_img" style={{ backgroundImage: "url(" + jim[numPres].src + ")" }}>
+            <div className={'rules' + (close === true ? ' close' : '')}>
+                <span
+                    onClick={() => {
+                        setClose(true);
+                    } }
+                    className="btn-close">X</span>
+                <h3>Jeux du Président</h3>
+                <h4>But du jeu : Découvrir tous les Présidents de la République française</h4>
+                <p> Apparenté au jeu Memory</p>
+                <h5>Début du jeu</h5>
+                <p>
+                    Une photo de chaque président est cachée.
+                    Un indice textuel de la vie du président apparaît également.
+                    Un champ réponse avec un bouton "Réponse" permet de d'essayer de deviner quel président se cache.
+                    Au début de la partie une seule carte (déterminée aléatoirement) est retournée laissant apparaître une partie du visage.
+                </p>
+                <h5>Commencer le jeu</h5>
+                <p>
+                              Cliquer sur les cartes pour découvrir les paires de cartes identiques
+                    A chaque paire découverte, il est possible de donner une réponse.
+                    Une paire retournée donne un indice supplémentaire et enlève des points.
+                    Chaque fausse réponse enlève des points.
+                    Le score est affiché et se décrémente à chaque paire retournée.
+                </p>
+                <h5>Découvrir un indice</h5>
+                <p>
+                    Un bouton "Découvrir" permet de découvrir un paire et un indice, mais enlève des points.
+                    On ne peut utiliser le bouton "Découvrir" que 3 fois
+                    Le temps pour découvrir le président est prise en compte et donne un bonus.
+                </p>
+                <h5>Les points</h5>
+                <p>
+                    Score max: 1000 (réponse avant de cliquer)
+                     onus de 1mn: +100
+                      nus de 2mn: +50
+                       us de 3mn: +10
+                        se réponse: -50
+                          retournée: -20
+                    Découvrir: 1er -40, 2eme -60, 3eme -80
+                </p>
+                <h5>Fin du jeu</h5>
+                <p>
+                    Le jeu se termine quand le joueur à trouver le nom du Président caché
+                    La photo, le nom du Président, et les dates du mandat se dévoilent avec un résumé de son histoire, le chiffre de la république, un lien "En svoir plus" et une anecdote
+                </p>
             </div>
-            {/* <img className="center_img" src={jim[numPres].src} alt="" /> */}
+            <div className="title_president">
+                <span>{jim[numPres].name} </span>       <span> {jim[numPres].mandat}</span>
+            </div>
+                                    {/* {
+                                        tiles_array.map((mask, index) =>
+                                            <li key={index}>{index}</li>
+
+                                        )
+                                    } */}
+
+            <div id="container__card">
+                <div
+                onClick={() => {
+                    setBack(true);
+                }}
+                    id="tile1" data-card="a_tips" className={'card' + (back === true ? ' rotate' : '')}><img className={'card_img' + (back === true ? ' back' : '')} src={img1} alt="" /></div>
+                <div id="tile2" data-card="b_tips" className="card"><img className="card_img" src={img2} alt="" /></div>
+                <div id="tile3" data-card="c_tips" className="card"><img className="card_img back" src={img3} alt="" /></div>
+                <div id="tile4" data-card="d_tips" className="card"><img className="card_img" src={img4} alt="" /></div>
+                <div id="tile5" data-card="e_tips" className="card"><img className="card_img" src={img5} alt="" /></div>
+                <div id="tile6" data-card="f_tips" className="card"><img className="card_img" src={img6} alt="" /></div>
+                <div id="tile7" data-card="g_tips" className="card"><img className="card_img" src={img7} alt="" /></div>
+                <div id="tile8" data-card="h_tips" className="card"></div>
+                <div id="tile9" data-card="i_tips" className="card"></div>
+                <div id="tile10" data-card="j_tips" className="card"></div>
+                <div id="tile11" data-card="k_tips" className="card"></div>
+                <div id="tile12" data-card="l_tips" className="card"></div>
+                <div id="tile13" data-card="m_tips" className="card"></div>
+                <div id="tile14" data-card="n_tips" className="card"></div>
+            </div>
         </div>
-    )
+    );
 }
 export default Center

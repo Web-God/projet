@@ -18,7 +18,10 @@ a:active {
   color: $colorBlue;
   text-decoration: none;
 }
-
+h5{
+  margin: 0;
+  padding: 0;
+}
 figure,
 input {
   margin: 0;
@@ -33,6 +36,7 @@ ol {
 
 p {
   margin-bottom: 1rem;
+  margin-top: 0.3em;
 }
 img {
   width: 100%;
