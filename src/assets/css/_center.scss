@@ -61,7 +61,7 @@
   height: 100vh;
   grid-template-rows: repeat(7, calc(100vh/7));
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 1px;
+  grid-row-gap: 2px;
   grid-column-gap: 1px;
   .card {
     background-color: $white;

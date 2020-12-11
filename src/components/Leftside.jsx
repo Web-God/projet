@@ -9,18 +9,28 @@ const Leftside = () => {
     function TimerPres() {
         setSeconds(0);
         setMins(0);
-        useEffect(()=>{
-            intervalId = setInterval(() => {
-                setSeconds(seconds += 1);
-                if (seconds >= 59) {
-                    seconds = 0;
-                    setMins(mins += 1);
-                    console.log("Sec", seconds);
-                    console.log("Min", mins)
-                }
+        intervalId = setInterval(() => {
+            setSeconds(seconds += 1);
+            if (seconds >= 59) {
+                seconds = 0;
+                setMins(mins += 1);
+                console.log("Sec", seconds);
+                console.log("Min", mins)
+            }
 
-            }, 1000);
-        },[])
+        }, 1000);
+        // useEffect(()=>{
+        //     intervalId = setInterval(() => {
+        //         setSeconds(seconds += 1);
+        //         if (seconds >= 59) {
+        //             seconds = 0;
+        //             setMins(mins += 1);
+        //             console.log("Sec", seconds);
+        //             console.log("Min", mins)
+        //         }
+
+        //     }, 1000);
+        // },[])
     }
     function StopTimer() {
         useEffect(() => {
@@ -39,14 +49,12 @@ const Leftside = () => {
                 className="container__leftside-clock" type="text" placeholder="00 : 09" value={mins + "  :  " + seconds} />
             <div className="content-btn">
                 <div
-                    onClick={()=>{
-                        console.log("Click Timer");
-                    }}
+                    onClick={TimerPres}
                     className="start" id="btnstart">Commencer</div>
                 <div
-                    onClick={()=>{
-                        console.log('Stop Timer');
-                    }}
+                    onClick={TimerPres}
+                        // console.log('Stop Timer');
+                    
                     className="reset" id="reset"><img src={crossicon} alt="" /></div>
             </div>
             <div className="lucky-label">Je tente ma chance</div>

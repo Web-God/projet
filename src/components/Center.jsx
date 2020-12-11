@@ -1,30 +1,62 @@
 import jim from './President';
-import img1 from './../assets/img/cards/Medaille_de_la_Famille_Francaise_Bronze_ribbon.svg';
-import img2 from './../assets/img/cards/Medaille_de_la_Jeunesse_et_des_Sports_Or_ribbon.svg';
-import img3 from './../assets/img/cards/Medaille_dhonneur_de_laeronautique_Or_ribbon.svg';
-import img4 from './../assets/img/cards/Medaille_dhonneur_de_lenseignement_du_premier_degre_ribbon.svg';
-import img5 from './../assets/img/cards/Medaille_dhonneur_des_societes_musicales_et_chorales_Bronze_ribbon.svg';
-import img6 from './../assets/img/cards/Medaille_du_Tourisme_Bronze_ribbon.svg';
-import img7 from './../assets/img/cards/Ruban_de_la_Medaille_des_Mines.svg';
+import joe from './Medals';
 import { useState } from 'react';
-let numPres = Math.floor(Math.random() * 25);
+import imgPresident from './President';
+import importImg from './Medals';
+// random number to display picts of Presidents
+let numPres = Math.floor(Math.random() * imgPresident.length);
+
 // Array with tiles
 const tiles_array = ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14"];
-function rotateCard(){
+function rotateCard() {
     this.classList.add('back');
 }
+// Fisher - Yates Shuffle Cards
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+  let shuffledCards = shuffle(tiles_array);
+  console.table(shuffledCards);
+  function startGame(){
+    // https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript#toc-1-shuffing-cards
 
-// Fisher - Yates react
+  }
+//   Matching Cards
+// function cardOpen() {
+//     openedCards.push(this);
+//     var len = openedCards.length;
+//     if(len === 2){
+//         moveCounter();
+//         if(openedCards[0].type === openedCards[1].type){
+//             matched();
+//         } else {
+//             unmatched();
+//         }
+//     }
+// };
+
+  /*****************************/
 function Center() {
     const [close, setClose] = useState(false);
     const [back, setBack] = useState(false);
+    const [cards, setCards]= useState([]);
+
     return (
         <div className="container__center center_img" style={{ backgroundImage: "url(" + jim[numPres].src + ")" }}>
             <div className={'rules' + (close === true ? ' close' : '')}>
                 <span
                     onClick={() => {
                         setClose(true);
-                    } }
+                    }}
                     className="btn-close">X</span>
                 <h3>Jeux du Président</h3>
                 <h4>But du jeu : Découvrir tous les Présidents de la République française</h4>
@@ -38,7 +70,7 @@ function Center() {
                 </p>
                 <h5>Commencer le jeu</h5>
                 <p>
-                              Cliquer sur les cartes pour découvrir les paires de cartes identiques
+                    Cliquer sur les cartes pour découvrir les paires de cartes identiques
                     A chaque paire découverte, il est possible de donner une réponse.
                     Une paire retournée donne un indice supplémentaire et enlève des points.
                     Chaque fausse réponse enlève des points.
@@ -53,11 +85,11 @@ function Center() {
                 <h5>Les points</h5>
                 <p>
                     Score max: 1000 (réponse avant de cliquer)
-                     onus de 1mn: +100
-                      nus de 2mn: +50
-                       us de 3mn: +10
-                        se réponse: -50
-                          retournée: -20
+                    onus de 1mn: +100
+                    nus de 2mn: +50
+                    us de 3mn: +10
+                    se réponse: -50
+                    retournée: -20
                     Découvrir: 1er -40, 2eme -60, 3eme -80
                 </p>
                 <h5>Fin du jeu</h5>
@@ -69,32 +101,24 @@ function Center() {
             <div className="title_president">
                 <span>{jim[numPres].name} </span>       <span> {jim[numPres].mandat}</span>
             </div>
-                                    {/* {
-                                        tiles_array.map((mask, index) =>
-                                            <li key={index}>{index}</li>
-
-                                        )
-                                    } */}
 
             <div id="container__card">
-                <div
-                onClick={() => {
-                    setBack(true);
-                }}
-                    id="tile1" data-card="a_tips" className={'card' + (back === true ? ' rotate' : '')}><img className={'card_img' + (back === true ? ' back' : '')} src={img1} alt="" /></div>
-                <div id="tile2" data-card="b_tips" className="card"><img className="card_img" src={img2} alt="" /></div>
-                <div id="tile3" data-card="c_tips" className="card"><img className="card_img back" src={img3} alt="" /></div>
-                <div id="tile4" data-card="d_tips" className="card"><img className="card_img" src={img4} alt="" /></div>
-                <div id="tile5" data-card="e_tips" className="card"><img className="card_img" src={img5} alt="" /></div>
-                <div id="tile6" data-card="f_tips" className="card"><img className="card_img" src={img6} alt="" /></div>
-                <div id="tile7" data-card="g_tips" className="card"><img className="card_img" src={img7} alt="" /></div>
-                <div id="tile8" data-card="h_tips" className="card"></div>
-                <div id="tile9" data-card="i_tips" className="card"></div>
-                <div id="tile10" data-card="j_tips" className="card"></div>
-                <div id="tile11" data-card="k_tips" className="card"></div>
-                <div id="tile12" data-card="l_tips" className="card"></div>
-                <div id="tile13" data-card="m_tips" className="card"></div>
-                <div id="tile14" data-card="n_tips" className="card"></div>
+                {
+                    shuffledCards.map((mask, i) => {
+                        let numMedal = Math.floor(Math.random() * importImg.length);
+                        // let m = Math.floor(Math.random() * tiles_array.length);
+                        let m = i + 1;
+                        return (
+                            <div
+                            // onClick={() => {
+                            //     setBack(true);
+                            // }}
+                            id={mask} data-card={m + '_tips'} className={'card' + (back === true ? ' rotate' : '')}><img className={'card_img' + (back === true ? ' back' : '')} src={joe[numMedal].import} alt="" /></div>
+                        )
+                    }
+
+                    )
+                }
             </div>
         </div>
     );
