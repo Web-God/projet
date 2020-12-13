@@ -12,6 +12,13 @@
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
     }
-  
+    &-tips{
+      color: $white;
+      margin-top: 2em;
+      width: 250px;
+      font-size: 1.1rem;
+      padding: 10px;
+      border: 1px solid $colorBluePale;
+      border-radius: 5px;
+    }
   }
-  

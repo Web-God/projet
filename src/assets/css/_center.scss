@@ -18,7 +18,7 @@
     line-height: 80px;
     background-color: $colorFade;
     span{
-      visibility: hidden;
+      // visibility: hidden;
     }
     span:nth-child(1) {
       margin-right: 1em;
@@ -79,13 +79,43 @@
   }
 }
 .rotate{
-    transition: transform 1s ease-in-out;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;
+    animation-name: flipInY;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    animation-duration: .75s;
+    // transition: transform 1s ease-in-out;
+    // transform: rotateY(180deg);
+    // transform-style: preserve-3d;
 }
 .back {
   transition: transform 1s ease-in-out;
   transform: rotateY(180deg);
   transform-style: preserve-3d;
   opacity: 1;
+}
+/* animations */
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
 }
