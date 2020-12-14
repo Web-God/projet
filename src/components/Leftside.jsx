@@ -114,7 +114,7 @@ const Leftside = (props) => {
                 onClick = {()=>{
                     setTip(tip = true);
                     if(tip === true){
-                        console.log(props.indice.tip2)
+                        console.log(props.indice.tip1)
                     }
                 }
                 }
