@@ -17,14 +17,24 @@ function shuffle(array) {
 // Shuffling Cards
 /*****************************/
 let shuffledCards = shuffle(medals);
-
 function Center(props) {
     // const [shuffledCards, setShuffledCards] = useState([]);
-    console.log(shuffledCards)
+    // console.log('shuffledCards: ', shuffledCards)
     const[allCardsArrayofObjects, setAllCardsArrayofObjects] = useState(shuffledCards);
-    function cardClicked(){
-        let shuffledCardsCopy = [...shuffledCards];
-        console.log(shuffledCardsCopy[0].show);
+    let shuffledCardsCopy = [...shuffledCards];
+    let id;
+    let stockid=[];
+    function cardClicked(e){
+        id = e.target.getAttribute('data-id');
+        // shuffledCardsCopy[id].show = true;
+        setAllCardsArrayofObjects(shuffledCardsCopy[id].show = true);
+        stockid.push(id)
+        if(stockid.length===2){
+            setAllCardsArrayofObjects(shuffledCardsCopy[id].show = false);
+            stockid=[];
+            console.log("Stock +2: ",stockid);
+        }
+        console.log('Click copy', stockid);
     }
     return (
         <div className="container__center center_img" style={{ backgroundImage: "url(" + props.pict + ")" }}>
@@ -37,8 +47,8 @@ function Center(props) {
                 {
                     shuffledCards.map((mask, i) => {
                         return (
-                            <div>
-                                <img
+                            <div key={i}>
+                                <img className={'card_img' + (shuffledCardsCopy[i].show === true ? ' rotate' : '')} data-id={i}
                                 onClick ={cardClicked}
                                 src={shuffledCards[i].url} alt="" />
                             </div>

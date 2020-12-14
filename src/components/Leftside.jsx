@@ -10,6 +10,7 @@ const Leftside = (props) => {
     const [stopclock, setStopclock]=useState(false);
     let [lucky, setLucky] = useState('');
     let [tip, setTip] = useState(false);
+    let [start, setStart] = useState(false);
     let intervalId;
 
     // useEffect(() => {
@@ -31,6 +32,7 @@ const Leftside = (props) => {
     //     return () => clearInterval(timer);
     // });
     function TimerPres() {
+        setStart(start = true);
         setSeconds(0);
         setMins(0);
 
@@ -73,7 +75,8 @@ const Leftside = (props) => {
     }
     function startGame() {
         // https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript#toc-1-shuffing-cards
-        shuffle(medals);
+        TimerPres()
+
         console.log("Start")
     }
     return (
@@ -87,7 +90,7 @@ const Leftside = (props) => {
             <h1>Mr le Président</h1>
             <div className="content-btn">
                 <div
-                    onClick={TimerPres}
+                    onClick={startGame}
                     className="start" id="btnstart">Commencer</div>
                 <div
                     onClick={startGame}
