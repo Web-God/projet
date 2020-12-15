@@ -20,38 +20,32 @@ let shuffledCards = shuffle(medals);
 function Center(props) {
     // const [shuffledCards, setShuffledCards] = useState([]);
     // console.log('shuffledCards: ', shuffledCards)
-    const[allCardsArrayofObjects, setAllCardsArrayofObjects] = useState(shuffledCards);
-    let id;
-    let stockid=[];
-    function cardClicked(i){
+    const [allCardsArrayofObjects, setAllCardsArrayofObjects] = useState(shuffledCards);
+    let lastIndex;
+    function cardClicked(i) {
+        let stockIndex = [];
+        stockIndex.push(i);
+        let stockIndexCopy = [...stockIndex, i];
+        console.log("Stock +2: ", stockIndexCopy);
+        // Assign false to property show of allCardsArrayofObjects
+        if (stockIndex.length === 2) {
+            for (let cardshow of allCardsArrayofObjects) {
+                cardshow.show = false;
+            }
+        }
+
         let shuffledCardsCopy = [...allCardsArrayofObjects];
         shuffledCardsCopy[i].show = true;
         setAllCardsArrayofObjects(shuffledCardsCopy);
-        // shuffledCardsCopy.map((index)=>{
-        //     shuffledCardsCopy[index].show = false
-        //  })
-        // if(shuffledCardsCopy[i].show === true){
-        //     setAllCardsArrayofObjects(shuffledCardsCopy[i].show=false);
-        //     console.log('Shuffle Copy: ', shuffledCardsCopy.show)
-        // }
-        // else{
-        //     shuffledCardsCopy[i].show = true;
-        //     setAllCardsArrayofObjects(shuffledCardsCopy);
+        // i = lastIndex;
 
+        // if (stockIndex.length === 2) {
+        //     // stockIndex=[];
+        //     // setAllCardsArrayofObjects(shuffledCardsCopy[id].show = false);
+        //     console.log(stockIndex)
         // }
-
-        // setAllCardsArrayofObjects(prevCheck => prevCheck + 1);
-        // console.log('Card index function', allCardsArrayofObjects);
-        
-        // setAllCardsArrayofObjects(allCardsArrayofObjects)
-        // stockid.push(id)
-        // if(stockid.length===2){
-        //     setAllCardsArrayofObjects(shuffledCardsCopy[id].show = false);
-        //     stockid=[];
-        //     console.log("Stock +2: ",stockid);
-        // }
-        // console.log('Click copy', stockid);
     }
+
     return (
         <div className="container__center center_img" style={{ backgroundImage: "url(" + props.pict + ")" }}>
             {/* <Rules /> */}
@@ -63,12 +57,12 @@ function Center(props) {
                 {
                     shuffledCards.map((mask, i) => {
                         return (
-                            <div key={i}>
-                                <img className={'card_img' + (allCardsArrayofObjects[i].show === true ? ' rotate' : '')} data-id={i}
-                                onClick ={()=>{
-                                    cardClicked(i);
-                                }}
-                                src={shuffledCards[i].url} alt="" />
+                            <div key={i} className="card">
+                                <img className={'card_img' + (allCardsArrayofObjects[i].show === true ? ' rotate back' : '')} data-id={i}
+                                    onClick={() => {
+                                        cardClicked(i);
+                                    }}
+                                    src={shuffledCards[i].url} alt="" />
                             </div>
                         )
                     }
@@ -89,5 +83,5 @@ export default Center
 //     // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
 //     items[1] = item;
 //     // 5. Set the state to our new copy
-//     this.setState({items});
+//     setCount({items});
 // },
