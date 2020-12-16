@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Rules from './Rules'
 import medals from './Medals';
 
@@ -14,28 +14,41 @@ function shuffle(array) {
     }
     return array;
 }
-// Shuffling Cards
+// Shuffling images Cards
 /*****************************/
 let shuffledCards = shuffle(medals);
 function Center(props) {
-    // const [shuffledCards, setShuffledCards] = useState([]);
-    // console.log('shuffledCards: ', shuffledCards)
     const [allCardsArrayofObjects, setAllCardsArrayofObjects] = useState(shuffledCards);
-    let lastIndex;
+    const [stockIndex, setStockIndex] = useState([]);
+    let intervalId;
+    // Function to flip card on click
     function cardClicked(i) {
-        let stockIndex = [];
-        stockIndex.push(i);
-        let stockIndexCopy = [...stockIndex, i];
-        console.log("Stock +2: ", stockIndexCopy);
-        // Assign false to property show of allCardsArrayofObjects
-        if (stockIndex.length === 2) {
-            for (let cardshow of allCardsArrayofObjects) {
-                cardshow.show = false;
-            }
-        }
-
+        let stockIndexCopy = [...stockIndex];
         let shuffledCardsCopy = [...allCardsArrayofObjects];
-        shuffledCardsCopy[i].show = true;
+        // Push i in stockIndexCopy
+        stockIndexCopy.push(shuffledCardsCopy[i].id);
+    console.log("Id de medals", shuffledCardsCopy[i].show)
+        console.log("copie Stock +2: ", stockIndexCopy);
+        // Assign false to property show of allCardsArrayofObjects     
+        if (stockIndexCopy.length === 2) {
+            // shuffledCardsCopy[stockIndexCopy[0]].show = "unflipped";
+            // shuffledCardsCopy[stockIndexCopy[1]].show = "unflipped";
+            // for (let cardshow of shuffledCardsCopy) {
+                //     cardshow.show = "unflipped";
+                // }
+                if (stockIndexCopy[0] === stockIndexCopy[1]){                    
+                    shuffledCardsCopy[i].show = 'close';                    
+                    console.log("Matched")
+                }else {
+                    shuffledCardsCopy.show = "unflipped";
+                    console.log("Unmatched")
+                }
+                stockIndexCopy = [];
+            }
+        // Copy array of object medals to modify property show to flipped
+        shuffledCardsCopy[i].show = "flipped";
+
+        setStockIndex(stockIndexCopy);
         setAllCardsArrayofObjects(shuffledCardsCopy);
         // i = lastIndex;
 
@@ -48,21 +61,21 @@ function Center(props) {
 
     return (
         <div className="container__center center_img" style={{ backgroundImage: "url(" + props.pict + ")" }}>
-            {/* <Rules /> */}
+            <Rules />
             <div className="title_president">
                 <span>{props.name} </span>       <span> {props.mandat}</span>
             </div>
 
-            <div id="container__card">
+            <div id="container__card" className={props.lucky === props.name ? 'hide' : ''}>
                 {
                     shuffledCards.map((mask, i) => {
                         return (
-                            <div key={i} className="card">
-                                <img className={'card_img' + (allCardsArrayofObjects[i].show === true ? ' rotate back' : '')} data-id={i}
+                            <div key={i} className = {allCardsArrayofObjects[i].show === "none" ? "hide card" : "card"}>
+                                <img className={'card_img' + (allCardsArrayofObjects[i].show === "flipped" ? ' rotate back' : '')} data-id={i}
                                     onClick={() => {
                                         cardClicked(i);
                                     }}
-                                    src={shuffledCards[i].url} alt="" />
+                                    src={shuffledCards[i].url} title={allCardsArrayofObjects[i].show === "flipped" ? allCardsArrayofObjects[i].title : null} alt={allCardsArrayofObjects[i].title} />
                             </div>
                         )
                     }
